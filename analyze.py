@@ -87,24 +87,24 @@ def analyze_presenters(presenters):
 	cnt = [name[1] for name in top_15_names]
 	x_pos = np.arange(len(names))
 
-	fig, ax = plt.subplots()
-	plt.barh(x_pos, cnt, align='center')
-	plt.yticks(x_pos, names) 
+	fig, ax = plt.subplots(figsize=(10, 6))
+	plt.barh(x_pos, cnt[::-1], align='center')
+	plt.yticks(x_pos, names[::-1]) 
 	plt.xlabel('Count')
 	fig.subplots_adjust(left=0.3)
-	plt.show()
+	plt.savefig("img/names.png")
 
 	# plot top affiliation locations
 	locations = [location[0] for location in top_15_locations]
 	cnt = [location[1] for location in top_15_locations]
 	x_pos = np.arange(len(locations))
 
-	fig, ax = plt.subplots()
-	plt.barh(x_pos, cnt, align='center')
-	plt.yticks(x_pos, locations) 
+	fig, ax = plt.subplots(figsize=(10, 6))
+	plt.barh(x_pos, cnt[::-1], align='center')
+	plt.yticks(x_pos, locations[::-1]) 
 	plt.xlabel('Count')
 	fig.subplots_adjust(left=0.3)
-	plt.show()
+	plt.savefig("img/locations.png")
 
 def generate_csv(data_list, filename):
 	dataframe = pd.DataFrame(data_list)
