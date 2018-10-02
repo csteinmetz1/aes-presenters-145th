@@ -99,6 +99,8 @@ def analyze_presenters(presenters):
 	affiliation_name_cnt = {}
 	affiliation_locations = []
 	affiliation_location_cnt = {}
+	affiliation_countries = []
+	affiliation_country_cnt = {}
 
 	for presenter in presenters:
 		for name in presenter['affiliation_names']:
@@ -108,29 +110,42 @@ def analyze_presenters(presenters):
 			else:
 				affiliation_name_cnt[name] += 1
 		for location in presenter['affiliation_locations']:
+			# count cities
 			if location not in affiliation_locations:
 				affiliation_locations.append(location)
 				affiliation_location_cnt[location] = 1
 			else:
 				affiliation_location_cnt[location] += 1
+			# count countries
+			country = location.split(',')[-1].strip()
+			if country not in affiliation_countries:
+				affiliation_countries.append(country)
+				affiliation_country_cnt[country] = 1
+			else:
+				affiliation_country_cnt[country] += 1
 	
 	n_presenters = len(presenters)
 	n_affiliation_names = len(affiliation_names)
-	n_affiliation_location = len(affiliation_locations)
+	n_affiliation_locations = len(affiliation_locations)
+	n_affiliation_countries = len(affiliation_countries)
 	
 	print("Number of presenters:", n_presenters)
 	print("Number of affiliations:", n_affiliation_names)
-	print("Number of locations:", n_affiliation_location)
+	print("Number of locations:", n_affiliation_locations)
+	print("Number of countries:", n_affiliation_countries)
 
 	# sort affiliations by count
 	sorted_affiliation_name_cnt = sorted(affiliation_name_cnt.items(), key=lambda kv: kv[1], reverse=True)
 	sorted_affiliation_location_cnt = sorted(affiliation_location_cnt.items(), key=lambda kv: kv[1], reverse=True)
+	sorted_affiliation_country_cnt = sorted(affiliation_country_cnt.items(), key=lambda kv: kv[1], reverse=True)
 
 	generate_csv(sorted_affiliation_name_cnt, "data/affiliations.csv")
 	generate_csv(sorted_affiliation_location_cnt, "data/locations.csv")
+	generate_csv(sorted_affiliation_country_cnt, "data/countries.csv")
 
 	top_15_names = sorted_affiliation_name_cnt[1:16]
 	top_15_locations = sorted_affiliation_location_cnt[1:16]
+	top_15_countries = sorted_affiliation_country_cnt[0:16]
 
 	sns.set()
 
@@ -146,12 +161,12 @@ def analyze_presenters(presenters):
 	ax.set_xlim(0, 12)
 
 	for i, v in enumerate(cnt[::-1]):
-		ax.text(v + 0.125, i, "{:0.01f}%".format((v*100)/n_affiliation_names), va='center')
+		ax.text(v + 0.125, i, "{:0.01f}%".format((v*100)/n_presenters), va='center')
 
 	fig.subplots_adjust(left=0.3)
 	plt.savefig("img/names.png")
 
-	# plot top affiliation locations
+	# plot top affiliation locations by city
 	locations = [location[0] for location in top_15_locations]
 	cnt = [location[1] for location in top_15_locations]
 	x_pos = np.arange(len(locations))
@@ -163,10 +178,27 @@ def analyze_presenters(presenters):
 	ax.set_xlim(0, 36)
 
 	for i, v in enumerate(cnt[::-1]):
-		ax.text(v + 0.25, i, "{:0.01f}%".format((v*100)/n_affiliation_location), va='center')
+		ax.text(v + 0.25, i, "{:0.01f}%".format((v*100)/n_presenters), va='center')
 
 	fig.subplots_adjust(left=0.3)
 	plt.savefig("img/locations.png")
+
+	# plot top affiliation locations by country
+	countries = [country[0] for country in top_15_countries]
+	cnt = [country[1] for country in top_15_countries]
+	x_pos = np.arange(len(countries))
+
+	fig, ax = plt.subplots(figsize=(10, 6))
+	plt.barh(x_pos, cnt[::-1], align='center')
+	plt.yticks(x_pos, countries[::-1]) 
+	plt.xlabel('Count')
+	ax.set_xlim(0, 275)
+
+	for i, v in enumerate(cnt[::-1]):
+		ax.text(v + 1, i, "{:0.01f}%".format((v*100)/n_presenters), va='center')
+
+	fig.subplots_adjust(left=0.3)
+	plt.savefig("img/countries.png")
 
 def generate_csv(data_list, filename):
 	dataframe = pd.DataFrame(data_list)

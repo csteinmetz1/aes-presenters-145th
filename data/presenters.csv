@@ -31,7 +31,7 @@
 29,['None'],['None'],Matthew,Ballos
 30,"['Boston, MA, USA', 'None']","['Berklee College of Music', 'MAMMA BARRA']",Erin,Barra
 31,['None'],['Sonasterio Studios'],Bruno,Barros
-32,"['London, UK']",['Queen Mary University London'],Mathieu,Barthet
+32,"['London, UK']",['Queen Mary University of London'],Mathieu,Barthet
 33,"['Cincinnati, OH, USA']",['Beach Dynamics'],Mark,Beach
 34,['None'],['None'],Frank,Beacham
 35,"['Santiago de Chile, Chile', 'None']","['Universidad Tecnologica de Chile INACAP', 'SABE Sonido']",Cristian,Becerra Benítez
@@ -72,7 +72,7 @@
 70,"['Berlin, Germany', 'Wedemark, Germany']","['Georg Neumann Berlin', 'Sennheiser Electronic']",Jürgen,Breitlow
 71,"['Montreal, Canada']",['Eidos Montreal'],Rob,Bridgett
 72,"['Smørum, Denmark', 'Allerød, Denmark']","['EBB-consult', 'DPA Microphones']",Eddy,Brixen
-73,"['London, UK']",['Queen Mary University London'],Gary,Bromham
+73,"['London, UK']",['Queen Mary University of London'],Gary,Bromham
 74,['None'],['RTS'],Michael,Brown
 75,['None'],"['Audio Product Manager, TSL Products']",Stephen,Brownsill
 76,"['Valencia, CA USA', 'Digital Media Solutions']","['Samsung Research America', 'Audio Group']",Pascal,Brunet
@@ -94,7 +94,7 @@
 92,"['Rochester, NY, USA']",['University of Rochester'],Olivia,Canavan
 93,"['Milan, Italy']",['Politecnico di Milano'],Antonio,Canclini
 94,"['Köthen, Germany']",['Anhalt University of Applied Sciences'],Alexander,Carôt
-95,"['San Francisco, CA, USA']",['Dolby Laboratories'],Tim,Carroll
+95,"['San Francisco, CA, USA']","['Dolby Laboratories, Inc.']",Tim,Carroll
 96,"['Lowell, MA, USA']",['University of Massachusetts Lowell'],Alex,Case
 97,"['Kgs. Lyngby, Denmark']",['Technical University of Denmark'],Diego,Caviedes Nozal
 98,"['Valencia, CA, USA']",['Samsung Research America'],Adrian,Celestinos
@@ -104,7 +104,7 @@
 102,"['Montreal, Quebec, Canada']",['McGill University'],Justin,Chervony
 103,"['Birmingham, UK']",['Birmingham City University'],Matthew,Cheshire
 104,"['Hamburg, Germany']",['HAW Hamburg'],Noé,Chevalier
-105,"['London, UK']",['Queen Mary University London'],Elaine,Chew
+105,"['London, UK']",['Queen Mary University of London'],Elaine,Chew
 106,"['Milan, Italy']",['Contralto Audio srl'],Letizia,Chisari
 107,['None'],"['Artificial Intelligence Research Center, Korea Electronics Technology Institute']",Choongsang,Cho
 108,"['Cracow, Poland', 'Kepno, Poland']","['AGH University of Science and Technology', 'Mega-Acoustic']",Bartlomiej,Chojnacki
@@ -279,7 +279,7 @@
 277,"['Guildford, Surrey, UK']",['University of Surrey'],Chungeun,Kim
 278,['None'],['Gwangju Institute of Science and Tech'],Hong,Kim
 279,"['New York, NY, USA']",['New York University'],Sungsoo,Kim
-280,"['Montreal, Quebec, Canada', 'Montreal, Quebec, Canada']","['McGill University', 'The Centre for Interdisciplinary Research in Music Media and Technology']",Richard,King
+280,"['Montreal, Quebec, Canada', 'Montreal, Quebec, Canada']","['McGill University', 'Centre for Interdisciplinary Research in Music Media and Technology']",Richard,King
 281,['None'],['None'],Eliot,Kissileff
 282,"['Amsterdam, Netherlands', 'Alkmaar, Netherlands.']","['Phantom Sound B.V.', 'TritonAudio.']",Joost,Kist
 283,"['Tokyo, Japan']",['NHK Science & Technology Research Laboratories'],Shu,Kitajima
@@ -363,7 +363,7 @@
 361,"['New York, NY, USA']",['Arup'],Alexander,Mayo
 362,"['Buenos Aires, Argentina']",['Andres Mayo Mastering & Audio Post'],Andres,Mayo
 363,"['College Park, MD, USA']",['University of Maryland'],Paul,Mayo
-364,['None'],['Meyer Sound'],Bob,McCarthy
+364,['None'],['Meyer Sound Laboratories'],Bob,McCarthy
 365,"['Belfast, Northern Ireland, UK']",['Qualcomm Technology International Ltd.'],Jonny,McClintock
 366,['None'],['Microphone Parts'],Matthew,McGlynn
 367,"['Sunnyvale, CA, USA']",['Wire Grind Audio'],Stephen,McGovern
@@ -377,7 +377,7 @@
 375,"['Southampton, UK']",['University of Southampton'],Dylan,Menzies
 376,"['Severna Park, MD, USA', 'None']","['Peabody Conservatory, Johns Hopkins', 'Baltimore, MD, USA']",Scott,Metcalfe
 377,"['New York City, NY, USA']",['Swan Studios NYC / Meyer Media LLC'],Andreas,Meyer
-378,"['Berkeley, CA, USA']",['Meyer Sound Labs'],John,Meyer
+378,"['Berkeley, CA, USA']",['Meyer Sound Laboratories'],John,Meyer
 379,['None'],['None'],Alan,Meyerson
 380,"['Queens, NY, USA']",['Electro-Harmonix / New Sensor Corporation'],Jonathan,Michelson
 381,"['Derby, UK']",['University of Derby'],Charles,Middlicott
@@ -385,7 +385,7 @@
 383,"['Old Lyme, CT, USA']",['Sennheiser'],Dave,Missal
 384,"['Coral Gables, FL, USA']",['University of Miami'],Thomas,Mitchell
 385,"['Tokyo, Japan']",['Sony Corporation'],Yuki,Mitsufuji
-386,"['London, UK']",['Queen Mary University London'],Dave,Moffat
+386,"['London, UK']",['Queen Mary University of London'],Dave,Moffat
 387,"['Alcalá de Henares, Madrid, Spain']",['University of Alcalá'],Inma,Mohíno-Herranz
 388,['Germany'],['DELTA Soundworks'],Ana,Monte
 389,['None'],['IATSE'],Jenny,Montgomery
@@ -444,7 +444,7 @@
 442,"['Niles, IL, USA']",['Shure Inc.'],Michael,Pettersen
 443,"['Milan, Italy']",['Politecnico di Milano'],Mirco,Pezzoli
 444,"['Rochester, NY, USA']",['University of Rochester'],Steve,Philbert
-445,"['None', 'None', 'York, UK']","['BBC R&D', '- Salford, UK', 'University of York']",Chris,Pike
+445,"['None', 'None', 'York, UK']","['BBC Research and Development', '- Salford, UK', 'University of York']",Chris,Pike
 446,"['Krakow, Poland']",['AGH University of Science and Technology'],Adam,Pilch
 447,"['Poland', 'Poland']","['Gdansk University of Technology', 'Hear Candy Mastering']",Magdalena,Piotrowska
 448,"['Kraków, Poland']",['AGH University of Science and Technology'],Kamil,Piotrowski
@@ -471,7 +471,7 @@
 469,"['Tokyo, Japan']",['University of Electro-Communications'],Yi,Ren
 470,"['London, UK']",['Abbey Road Studios'],Hashim,Riaz
 471,"['Englewood CO, USA']",['Starz Entertainment'],Sean,Richardson
-472,"['San Francisco, CA USA']",['Dolby Laboratories'],Jeffrey,Riedmiller
+472,"['San Francisco, CA USA']","['Dolby Laboratories, Inc.']",Jeffrey,Riedmiller
 473,['None'],['None'],Mark,Rifkin
 474,"['York, UK']",['University of York'],David,Rivas Méndez
 475,"['Erlangen, Germany']",['International Audio Laboratories Erlangen'],Thomas,Robotham
@@ -539,7 +539,7 @@
 537,['None'],['RTS'],Ken,Smally
 538,"['San Francisco, CA, USA']","['MainStreaming, Inc.']",Mike,Smith
 539,"['Rochester, NY, USA']",['University of Rochester'],Sarah,Smith
-540,"['McMahons Point, NSW, Australia']",['Dolby Laboratories'],Michael,Smithers
+540,"['McMahons Point, NSW, Australia']","['Dolby Laboratories, Inc.']",Michael,Smithers
 541,"['Princeton, NJ, USA']",['Princeton University'],Jeff,Snyder
 542,"['Athens, OH, USA']","['Ohio University, School of Media Arts & Studies']",Kyle,Snyder
 543,"['Krakow, Poland']",['AGH University of Science and Technology'],Katarzyna,Sochaczewska
@@ -551,7 +551,7 @@
 549,"['New York, NY, USA']",['New York University'],Sripathi,Sridhar
 550,"['Gdansk, Poland']",['Gdansk University of Technology'],Andrzej,Sroczynski
 551,"['Birmingham, UK']",['Birmingham City University'],Ryan,Stables
-552,"['San Francisco, CA, USA']",['Dolby Laboratories'],Karen,Stackpole
+552,"['San Francisco, CA, USA']","['Dolby Laboratories, Inc.']",Karen,Stackpole
 553,"['None', 'None']","['NBCUniversal', 'ATSC Group']",Jim,Starzynski
 554,"['Pittsburgh, PA, USA']",['Carnegie Mellon University'],Richard,Stern
 555,['None'],['None'],Candace,Stewart
@@ -610,7 +610,7 @@
 608,['None'],['None'],Yao,Wang
 609,"['Salford, UK']",['University of Salford'],Lauren,Ward
 610,"['Valley Village, CA, USA']",['SPARS'],Drew,Waters
-611,"['London, UK']",['Queen Mary University London'],James,Weaver
+611,"['London, UK']",['Queen Mary University of London'],James,Weaver
 612,"['Beijing, China']","['Institute of Acoustics, Chinese Academy of Sciences']",Tong,Wei
 613,"['New York, NY, USA']",['City University of New York'],Barbara,Weinstein
 614,"['New York, NY, USA']",['New York Public Radio'],George,Wellington

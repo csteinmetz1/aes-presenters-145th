@@ -1,5 +1,5 @@
 # aes-presenters-145th
-Analysis of presesnters at the 145th AES Convention October 17-21, 2018 - New York, New York
+Analysis of presenters at the 145th AES Convention October 17-21, 2018 - New York, New York
 
 ## Summary
 
@@ -7,8 +7,10 @@ Analysis of presesnters at the 145th AES Convention October 17-21, 2018 - New Yo
 
 ![names](img/names.png)
 
-## Top Locations
+## Top Cities
 
 ![locations](img/locations.png)
 
-## 
+## Top Countries
+
+![countries](img/countries.png)
