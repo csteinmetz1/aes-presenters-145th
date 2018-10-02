@@ -1,16 +1,21 @@
+import os
+import sys
 import json
 import argparse
 import numpy as np
 import pandas as pd
+import urllib.request
+import seaborn as sns
+from time import sleep
 from bs4 import BeautifulSoup
 import matplotlib.pyplot as plt
 from collections import OrderedDict
 
-def parse_list(presenter_file):
+def parse_presenters_list(presenter_file):
 	soup = BeautifulSoup(open(presenter_file), 'html.parser')
 	presenter_list = soup.find('body').find('div', {'class' : 'col-md-9'}).find_all('p')
 	
-	presenters =[]
+	presenters = []
 
 	for presenter_text in presenter_list:
 		p = presenter_text.a.text
@@ -41,6 +46,51 @@ def parse_list(presenter_file):
 
 		presenters.append(presenter)
 
+	return presenters
+
+def parse_papers_list(papers_file):
+	soup = BeautifulSoup(open(papers_file), 'html.parser')
+	papers_list = soup.find('body').find('div', {'class' : 'c-layout-sidebar-content c-align-left'}).find_all('h4')
+	
+	paper_links = []
+
+	for paper_link in papers_list:
+		try:
+			url = paper_link.a['href']
+			filename = paper_link.a.string
+			filename = "".join([c for c in filename if c.isalpha() or c.isdigit() or c==' ']).rstrip()
+			paper_links.append((url, filename))
+		except Exception as e:
+			print(e)
+	
+	n_papers = len(paper_links)
+
+	# download data about papers (authors, affiliations, subject)
+	if not os.path.isdir("html/papers"):
+		os.makedirs("html/papers")
+		for idx, paper_link in enumerate(paper_links):
+			sys.stdout.write(200 * " ")
+			sys.stdout.write("\r")
+			sys.stdout.write("* {0}/{1} - {2}\r".format(idx, n_papers, paper_link[1]))
+			sys.stdout.flush()
+			urllib.request.urlretrieve(paper_link[0], "html/papers/{}.html".format(paper_link[1]))
+			sleep(5) # watch out - don't want to spam server with requests
+
+
+def clean_presenters_list(presenters):
+	for p_idx, presenter in enumerate(presenters):
+		for n_idx, name in enumerate(presenter['affiliation_names']):
+			if   name == "Queen Mary University London":
+				presenters[p_idx]['affiliation_names'][n_idx] = "Queen Mary University of London"
+			elif name == "Dolby Laboratories":
+				presenters[p_idx]['affiliation_names'][n_idx] = "Dolby Laboratories, Inc."
+			elif name == "Meyer Sound Labs" or name == "Meyer Sound":
+				presenters[p_idx]['affiliation_names'][n_idx] = "Meyer Sound Laboratories"
+			elif name == "BBC R&D":
+				 presenters[p_idx]['affiliation_names'][n_idx] = "BBC Research and Development"
+			elif name == "The Centre for Interdisciplinary Research in Music Media and Technology":
+				presenters[p_idx]['affiliation_names'][n_idx] = "Centre for Interdisciplinary Research in Music Media and Technology"
+	
 	return presenters
 
 def analyze_presenters(presenters):
@@ -76,11 +126,13 @@ def analyze_presenters(presenters):
 	sorted_affiliation_name_cnt = sorted(affiliation_name_cnt.items(), key=lambda kv: kv[1], reverse=True)
 	sorted_affiliation_location_cnt = sorted(affiliation_location_cnt.items(), key=lambda kv: kv[1], reverse=True)
 
-	generate_csv(sorted_affiliation_name_cnt, "affiliations.csv")
-	generate_csv(sorted_affiliation_location_cnt, "locations.csv")
+	generate_csv(sorted_affiliation_name_cnt, "data/affiliations.csv")
+	generate_csv(sorted_affiliation_location_cnt, "data/locations.csv")
 
 	top_15_names = sorted_affiliation_name_cnt[1:16]
 	top_15_locations = sorted_affiliation_location_cnt[1:16]
+
+	sns.set()
 
 	# plot top affiliation names
 	names = [name[0] for name in top_15_names]
@@ -91,6 +143,11 @@ def analyze_presenters(presenters):
 	plt.barh(x_pos, cnt[::-1], align='center')
 	plt.yticks(x_pos, names[::-1]) 
 	plt.xlabel('Count')
+	ax.set_xlim(0, 12)
+
+	for i, v in enumerate(cnt[::-1]):
+		ax.text(v + 0.125, i, "{:0.01f}%".format((v*100)/n_affiliation_names), va='center')
+
 	fig.subplots_adjust(left=0.3)
 	plt.savefig("img/names.png")
 
@@ -103,6 +160,11 @@ def analyze_presenters(presenters):
 	plt.barh(x_pos, cnt[::-1], align='center')
 	plt.yticks(x_pos, locations[::-1]) 
 	plt.xlabel('Count')
+	ax.set_xlim(0, 36)
+
+	for i, v in enumerate(cnt[::-1]):
+		ax.text(v + 0.25, i, "{:0.01f}%".format((v*100)/n_affiliation_location), va='center')
+
 	fig.subplots_adjust(left=0.3)
 	plt.savefig("img/locations.png")
 
@@ -112,12 +174,18 @@ def generate_csv(data_list, filename):
 
 def create_parser():
 	parser = argparse.ArgumentParser()
-	parser.add_argument('--file', help='Path to HTML file containing presenter list.', required=True)
+	parser.add_argument('--presenters', help='Path to HTML file containing presenter list.', required=False)
+	parser.add_argument('--papers', help='Path to HTML file containing papers list.', required=False)
 	return parser
 
 if __name__ == '__main__':
 	parser = create_parser()
 	args = parser.parse_args()
-	presenters = parse_list(args.file)
-	generate_csv(presenters, "presenters.csv")
-	analyze_presenters(presenters)
+	if args.presenters:
+		presenters = parse_presenters_list(args.presenters)
+		presenters = clean_presenters_list(presenters)
+		generate_csv(presenters, "data/presenters.csv")
+		analyze_presenters(presenters)
+	if args.papers:	
+		papers = parse_papers_list(args.papers)
+
