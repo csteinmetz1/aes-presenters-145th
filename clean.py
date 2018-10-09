@@ -1,3 +1,7 @@
+import string
+from nltk.corpus import stopwords 
+from nltk.tokenize import word_tokenize
+
 def clean_presenters_list(presenters):
     for p_idx, presenter in enumerate(presenters):
         for n_idx, name in enumerate(presenter['affiliation_names']):
@@ -18,3 +22,16 @@ def clean_presenters_list(presenters):
                 presenters[p_idx]['affiliation_locations'][l_idx] = ""
 
     return presenters
+
+# words is a string of words
+def remove_stopwords(words):
+    stop_words = set(stopwords.words('english') + list(string.punctuation)) 
+    word_tokens = word_tokenize(words) 
+    
+    filtered_words = []
+
+    for w in word_tokens: 
+        if w not in stop_words: 
+            filtered_words.append(w) 
+
+    return filtered_words

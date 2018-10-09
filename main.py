@@ -23,3 +23,4 @@ if __name__ == '__main__':
     if args.papers:	
         papers = parse.parse_papers_list(args.papers)
         analyze.generate_csv(papers, "data/papers.csv")
+        stats = analyze.analyze_papers(papers, top_limit=15)

@@ -87,8 +87,8 @@ def parse_papers_list(papers_file, wait_time=5):
             details = paper_details[2].find_all('span')
         else:
             details = paper_details[1].find_all('span')
-        authors = details[1].text.split(';')
-        affiliation = details[3].text.split(';')
+        authors = [a.strip() for a in details[1].text.split(';')]
+        affiliation = [a.replace('(See document for exact affiliation information.)', '').strip() for a in details[3].text.split(';')]
         subject = details[13].text
         if subject.strip() == "Subject:":
             subject = details[14].text
@@ -106,9 +106,6 @@ def parse_papers_list(papers_file, wait_time=5):
         else:
             paper_type = 'Talk'
 
-        print(subject, paper_type)
-
-        #print(idx, title)
         paper = {}
         paper['title'] = title
         paper['abstract'] = abstract

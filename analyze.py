@@ -4,6 +4,8 @@ import numpy as np
 import pandas as pd
 from collections import OrderedDict
 
+import clean
+
 def analyze_presenters(presenters, top_limit=10):
 
     affiliation_names = []
@@ -50,9 +52,9 @@ def analyze_presenters(presenters, top_limit=10):
     sorted_affiliation_location_cnt = sorted(affiliation_location_cnt.items(), key=lambda kv: kv[1], reverse=True)
     sorted_affiliation_country_cnt = sorted(affiliation_country_cnt.items(), key=lambda kv: kv[1], reverse=True)
 
-    generate_csv(sorted_affiliation_name_cnt, "data/affiliations.csv")
-    generate_csv(sorted_affiliation_location_cnt, "data/locations.csv")
-    generate_csv(sorted_affiliation_country_cnt, "data/countries.csv")
+    generate_csv(sorted_affiliation_name_cnt, "data/affiliation_counts.csv")
+    generate_csv(sorted_affiliation_location_cnt, "data/location_counts.csv")
+    generate_csv(sorted_affiliation_country_cnt, "data/country_counts.csv")
 
     top_names = sorted_affiliation_name_cnt[0:top_limit]
     top_locations = sorted_affiliation_location_cnt[0:top_limit]
@@ -65,6 +67,73 @@ def analyze_presenters(presenters, top_limit=10):
     statistics['countries'] = top_countries
 
     return statistics
+
+def analyze_papers(papers, top_limit=10):
+
+    ### Authors ###
+    authors = []
+    authors_cnt = {}
+
+    for paper in papers:
+        for author in paper['authors']:
+            if author not in authors:
+                authors.append(author)
+                authors_cnt[author] = 1
+            else:
+                authors_cnt[author] += 1
+
+    sorted_authors_cnt = sorted(authors_cnt.items(), key=lambda kv: kv[1], reverse=True)
+    #print(sorted_authors_cnt)
+
+    ### Affiliations ###
+    affiliations = []
+    affiliations_cnt = {}
+
+    for paper in papers:
+        for affiliation in paper['affiliation']:
+            affiliation = affiliation.split(',')[0]
+            if affiliation not in affiliations:
+                affiliations.append(affiliation)
+                affiliations_cnt[affiliation] = 1
+            else:
+                affiliations_cnt[affiliation] += 1
+
+    sorted_affiliations_cnt = sorted(affiliations_cnt.items(), key=lambda kv: kv[1], reverse=True)
+    #for aff in sorted_affiliations_cnt:
+    #    print(aff)
+
+    ### Subjects ###
+
+    subjects = []
+    subjects_cnt = {}
+
+    for paper in papers:
+        if paper['subject'] not in subjects:
+            subjects.append(paper['subject'])
+            subjects_cnt[paper['subject']] = 1
+        else:
+            subjects_cnt[paper['subject']] += 1
+
+    sorted_subjects_cnt = sorted(subjects_cnt.items(), key=lambda kv: kv[1], reverse=True)
+    for sub in sorted_subjects_cnt:
+        print(sub)
+
+    ### Title/Abtract ###
+    words = []
+    words_cnt = {}
+
+    for paper in papers:
+        abstract_words = paper['abstract']
+        filtered_abstract_words = clean.remove_stopwords(abstract_words)
+        for word in filtered_abstract_words:
+            if word not in words:
+                words.append(word)
+                words_cnt[word] = 1
+            else:
+                words_cnt[word] += 1
+    
+    sorted_words_cnt = sorted(words_cnt.items(), key=lambda kv: kv[1], reverse=True)
+    #print(sorted_words_cnt)
 
 def generate_csv(data_list, filename):
     dataframe = pd.DataFrame(data_list)
