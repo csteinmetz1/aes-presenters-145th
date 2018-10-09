@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import glob
 import argparse
 import numpy as np
 import pandas as pd
@@ -48,7 +49,7 @@ def parse_presenters_list(presenter_file):
 
 	return presenters
 
-def parse_papers_list(papers_file):
+def parse_papers_list(papers_file, wait_time=5):
 	soup = BeautifulSoup(open(papers_file), 'html.parser')
 	papers_list = soup.find('body').find('div', {'class' : 'c-layout-sidebar-content c-align-left'}).find_all('h4')
 	
@@ -61,21 +62,43 @@ def parse_papers_list(papers_file):
 			filename = "".join([c for c in filename if c.isalpha() or c.isdigit() or c==' ']).rstrip()
 			paper_links.append((url, filename))
 		except Exception as e:
-			print(e)
+			pass
 	
+		sys.stdout.write("* Papers found: {0}\r".format(len(paper_links)))
+		sys.stdout.flush()
+
 	n_papers = len(paper_links)
 
 	# download data about papers (authors, affiliations, subject)
 	if not os.path.isdir("html/papers"):
 		os.makedirs("html/papers")
 		for idx, paper_link in enumerate(paper_links):
-			sys.stdout.write(200 * " ")
+			remaining_time = (n_papers - idx) * wait_time
+			sys.stdout.write(100 * " ")
 			sys.stdout.write("\r")
-			sys.stdout.write("* {0}/{1} - {2}\r".format(idx, n_papers, paper_link[1]))
+			sys.stdout.write("* {0}/{1} - {2} - ~{3} seconds remaining...\r".format(idx, n_papers, paper_link[1], remaining_time))
 			sys.stdout.flush()
 			urllib.request.urlretrieve(paper_link[0], "html/papers/{}.html".format(paper_link[1]))
-			sleep(5) # watch out - don't want to spam server with requests
+			sleep(wait_time) # watch out - don't want to spam server with requests
 
+	for paper in glob.glob("html/papers/*.html"):
+		soup = BeautifulSoup(open(paper), 'html.parser')
+		paper_details = soup.find('body').find('div', {'class' : 'c-content-box c-size-md c-bg-white'}).find_all('p')
+
+		title = os.path.basename(paper).strip('.html')
+		abstract = paper_details[0].text
+		details = paper_details[1].find_all('span')
+		authors = details[1].text.split(';')
+		affiliation = details[3].text
+		subject = details[13].text
+
+		print(title)
+		print(abstract)
+		print(authors)
+		print(affiliation)
+		print(subject)
+
+	#return papers
 
 def clean_presenters_list(presenters):
 	for p_idx, presenter in enumerate(presenters):
@@ -91,6 +114,11 @@ def clean_presenters_list(presenters):
 			elif name == "The Centre for Interdisciplinary Research in Music Media and Technology":
 				presenters[p_idx]['affiliation_names'][n_idx] = "Centre for Interdisciplinary Research in Music Media and Technology"
 	
+		for l_idx, location in enumerate(presenter['affiliation_locations']):
+			country = location.split(',')[-1].strip()
+			if country == "NY USA":
+				presenters[p_idx]['affiliation_locations'][l_idx] = ""
+
 	return presenters
 
 def analyze_presenters(presenters):
@@ -143,18 +171,18 @@ def analyze_presenters(presenters):
 	generate_csv(sorted_affiliation_location_cnt, "data/locations.csv")
 	generate_csv(sorted_affiliation_country_cnt, "data/countries.csv")
 
-	top_15_names = sorted_affiliation_name_cnt[1:16]
-	top_15_locations = sorted_affiliation_location_cnt[1:16]
-	top_15_countries = sorted_affiliation_country_cnt[0:16]
+	top_names = sorted_affiliation_name_cnt[1:30]
+	top_locations = sorted_affiliation_location_cnt[1:30]
+	top_countries = sorted_affiliation_country_cnt[0:30]
 
 	sns.set()
 
 	# plot top affiliation names
-	names = [name[0] for name in top_15_names]
-	cnt = [name[1] for name in top_15_names]
+	names = [name[0] for name in top_names]
+	cnt = [name[1] for name in top_names]
 	x_pos = np.arange(len(names))
 
-	fig, ax = plt.subplots(figsize=(10, 6))
+	fig, ax = plt.subplots(figsize=(10, 10))
 	plt.barh(x_pos, cnt[::-1], align='center')
 	plt.yticks(x_pos, names[::-1]) 
 	plt.xlabel('Count')
@@ -167,11 +195,11 @@ def analyze_presenters(presenters):
 	plt.savefig("img/names.png")
 
 	# plot top affiliation locations by city
-	locations = [location[0] for location in top_15_locations]
-	cnt = [location[1] for location in top_15_locations]
+	locations = [location[0] for location in top_locations]
+	cnt = [location[1] for location in top_locations]
 	x_pos = np.arange(len(locations))
 
-	fig, ax = plt.subplots(figsize=(10, 6))
+	fig, ax = plt.subplots(figsize=(10, 10))
 	plt.barh(x_pos, cnt[::-1], align='center')
 	plt.yticks(x_pos, locations[::-1]) 
 	plt.xlabel('Count')
@@ -184,11 +212,11 @@ def analyze_presenters(presenters):
 	plt.savefig("img/locations.png")
 
 	# plot top affiliation locations by country
-	countries = [country[0] for country in top_15_countries]
-	cnt = [country[1] for country in top_15_countries]
+	countries = [country[0] for country in top_countries]
+	cnt = [country[1] for country in top_countries]
 	x_pos = np.arange(len(countries))
 
-	fig, ax = plt.subplots(figsize=(10, 6))
+	fig, ax = plt.subplots(figsize=(10, 10))
 	plt.barh(x_pos, cnt[::-1], align='center')
 	plt.yticks(x_pos, countries[::-1]) 
 	plt.xlabel('Count')
