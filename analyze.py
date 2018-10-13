@@ -6,7 +6,7 @@ from collections import OrderedDict
 
 import clean
 
-def analyze_presenters(presenters, top_limit=10):
+def analyze_presenters(presenters):
 
     affiliation_names = []
     affiliation_name_cnt = {}
@@ -42,33 +42,31 @@ def analyze_presenters(presenters, top_limit=10):
     n_affiliation_locations = len(affiliation_locations)
     n_affiliation_countries = len(affiliation_countries)
     
+    print("Presenter Statistics Summary:")
     print("Number of presenters:", n_presenters)
     print("Number of affiliations:", n_affiliation_names)
     print("Number of locations:", n_affiliation_locations)
     print("Number of countries:", n_affiliation_countries)
+    print("\n")
 
     # sort affiliations by count
     sorted_affiliation_name_cnt = sorted(affiliation_name_cnt.items(), key=lambda kv: kv[1], reverse=True)
     sorted_affiliation_location_cnt = sorted(affiliation_location_cnt.items(), key=lambda kv: kv[1], reverse=True)
     sorted_affiliation_country_cnt = sorted(affiliation_country_cnt.items(), key=lambda kv: kv[1], reverse=True)
 
-    generate_csv(sorted_affiliation_name_cnt, "data/affiliation_counts.csv")
-    generate_csv(sorted_affiliation_location_cnt, "data/location_counts.csv")
-    generate_csv(sorted_affiliation_country_cnt, "data/country_counts.csv")
-
-    top_names = sorted_affiliation_name_cnt[0:top_limit]
-    top_locations = sorted_affiliation_location_cnt[0:top_limit]
-    top_countries = sorted_affiliation_country_cnt[0:top_limit]
+    generate_csv(sorted_affiliation_name_cnt, "data/presenter_names.csv")
+    generate_csv(sorted_affiliation_location_cnt, "data/presenter_locations.csv")
+    generate_csv(sorted_affiliation_country_cnt, "data/presenter_countries.csv")
 
     statistics = {}
     statistics['presenters'] = n_presenters
-    statistics['names'] = top_names
-    statistics['locations'] = top_locations
-    statistics['countries'] = top_countries
+    statistics['names'] = [i for i in sorted_affiliation_name_cnt if i[0] != 'None']
+    statistics['locations'] = [i for i in sorted_affiliation_location_cnt if i[0] != 'None'] 
+    statistics['countries'] = [i for i in sorted_affiliation_country_cnt if i[0] != 'None'] 
 
     return statistics
 
-def analyze_papers(papers, top_limit=10):
+def analyze_papers(papers):
 
     ### Authors ###
     authors = []
@@ -115,15 +113,13 @@ def analyze_papers(papers, top_limit=10):
             subjects_cnt[paper['subject']] += 1
 
     sorted_subjects_cnt = sorted(subjects_cnt.items(), key=lambda kv: kv[1], reverse=True)
-    for sub in sorted_subjects_cnt:
-        print(sub)
 
     ### Title/Abtract ###
     words = []
     words_cnt = {}
 
     for paper in papers:
-        abstract_words = paper['abstract']
+        abstract_words = paper['abstract'].lower()
         filtered_abstract_words = clean.remove_stopwords(abstract_words)
         for word in filtered_abstract_words:
             if word not in words:
@@ -133,7 +129,28 @@ def analyze_papers(papers, top_limit=10):
                 words_cnt[word] += 1
     
     sorted_words_cnt = sorted(words_cnt.items(), key=lambda kv: kv[1], reverse=True)
-    #print(sorted_words_cnt)
+
+    n_papers = len(papers)
+
+    print("Paper Statistics Summary:")
+    print("Number of papers:", n_papers)
+    print("Number of subjects:", len(sorted_subjects_cnt))
+    print("Number of unique words:", len(sorted_words_cnt))
+    print("Number of affiliation:", len(sorted_affiliations_cnt))
+
+    generate_csv(sorted_words_cnt, "data/abstract_words.csv")
+    generate_csv(sorted_authors_cnt, "data/paper_authors.csv")
+    generate_csv(sorted_subjects_cnt, "data/paper_subjects.csv")
+    generate_csv(sorted_affiliations_cnt, "data/paper_affiliations.csv")
+
+    statistics = {}
+    statistics['papers'] = n_papers
+    statistics['authors'] = sorted_authors_cnt
+    statistics['subjects'] = sorted_subjects_cnt
+    statistics['words'] = sorted_words_cnt
+    statistics['affiliations'] = sorted_affiliations_cnt
+
+    return statistics
 
 def generate_csv(data_list, filename):
     dataframe = pd.DataFrame(data_list)

@@ -36,7 +36,7 @@
 34,['None'],['None'],Frank,Beacham
 35,"['Santiago de Chile, Chile', 'None']","['Universidad Tecnologica de Chile INACAP', 'SABE Sonido']",Cristian,Becerra Benítez
 36,"['Mittweida, Germany']",['DirectOut GmbH'],Claudio,Becker-Foss
-37,"['Santa Clara, CA USA']","['DSP Concepts, Inc.']",Paul,Beckmann
+37,['USA'],"['DSP Concepts, Inc.']",Paul,Beckmann
 38,['None'],['Riedel'],David,Beckwith
 39,"['Ilmenau, Germany']",['Fraunhofer Institute for Digital Media Technology IDMT'],Daniel,Beer
 40,['None'],['None'],Michael,Beinhorn
@@ -47,7 +47,7 @@
 45,"['Piteå, Sweden']",['Luleå University of Technology'],Jan,Berg
 46,"['Aachen, Germany']",['RWTH Aachen University'],Marco,Berzborn
 47,"['New York, NY, USA']",['New York University'],Tom,Beyer
-48,"['Valencia, CA USA']",['Samsung Research America'],Andri,Bezzola
+48,['USA'],['Samsung Research America'],Andri,Bezzola
 49,"['San Francisco, CA, USA']","['HP Labs., Inc.']",Sunil,Bharitkar
 50,"['New York, NY, USA']",['Entercom.com'],David,Bialik
 51,"['Indianapolis, IN, USA']","['Purdue School of Engineering and Technology, IUPUI']",Doug,Bielmeier
@@ -75,7 +75,7 @@
 73,"['London, UK']",['Queen Mary University of London'],Gary,Bromham
 74,['None'],['RTS'],Michael,Brown
 75,['None'],"['Audio Product Manager, TSL Products']",Stephen,Brownsill
-76,"['Valencia, CA USA', 'Digital Media Solutions']","['Samsung Research America', 'Audio Group']",Pascal,Brunet
+76,"['USA', 'Digital Media Solutions']","['Samsung Research America', 'Audio Group']",Pascal,Brunet
 77,"['Niles, IL USA']",['Shure Incorporated'],Mark,Brunner
 78,"['Kgs. Lyngby, Denmark']",['Technical University of Denmark'],Jonas,Brunskog
 79,['None'],['WKNY Radio'],Jimmy,Buff
@@ -190,7 +190,7 @@
 188,"['Alcalá de Henares, Madrid, Spain']",['University of Alcalá'],Joaquín,García-Gómez
 189,"['Brighton, UK']",['Mix Messiah Productions'],Leslie,Gaston-Bird
 190,"['Beijing, China']",['Peking University'],Zhongshu,Ge
-191,"['Woodland Hills, CA USA', 'Salford, UK']","['Source Sound VR', 'University of Salford']",Linda,Gedemer
+191,"['USA', 'Salford, UK']","['Source Sound VR', 'University of Salford']",Linda,Gedemer
 192,"['New York, NY, USA']",['New York University'],Paul,Geluso
 193,"['Athens, Greece']",['National and Kapodistrian University of Athens'],Anastasia,Georgaki
 194,"['Morgan Hill, CA, USA', 'Morgan Hill, CA, USA']","['Skyline Entertainment and Publishing', 'Tool Shed Studios']",Bt,Gibbs
@@ -320,7 +320,7 @@
 318,"['Boston, MA, USA']",['American Tower'],Jim,Leifer
 319,['None'],['RafterMarsh'],Phillipp,Lengeling
 320,"['Victoria, BC, Canada']",['Freelance Music Producer / Audio Educator'],Theresa,Leonard
-321,"['Irvine, CA USA']",['PD Squared'],Scott,Leslie
+321,['USA'],['PD Squared'],Scott,Leslie
 322,"['New York / Havana', 'New York/Havana']","['Music Has No Enemies', 'Habanico']",Andres,Levin
 323,"['Camarillo, CA, USA']",['Rat Sound Systems'],Dave,Levine
 324,"['Hannover, Germany']",['Leibniz Universität Hannover'],Song,Li
@@ -372,7 +372,7 @@
 370,"['Northridge, CA, USA']",['Harman Professional'],Brian,McLaughlin
 371,['None'],['Epic Games'],Aaron,McLeran
 372,"['Hollywood, CA, USA']",['Capitol Studios Mastering'],Ron,McMaster
-373,"['Valencia, CA USA']",['Samsung Research America'],Elisabeth,McMullin
+373,['USA'],['Samsung Research America'],Elisabeth,McMullin
 374,"['Philadelphia, PA, USA']",['Carpenter Technology Corporation'],Md,Mehedi
 375,"['Southampton, UK']",['University of Southampton'],Dylan,Menzies
 376,"['Severna Park, MD, USA', 'None']","['Peabody Conservatory, Johns Hopkins', 'Baltimore, MD, USA']",Scott,Metcalfe
@@ -471,7 +471,7 @@
 469,"['Tokyo, Japan']",['University of Electro-Communications'],Yi,Ren
 470,"['London, UK']",['Abbey Road Studios'],Hashim,Riaz
 471,"['Englewood CO, USA']",['Starz Entertainment'],Sean,Richardson
-472,"['San Francisco, CA USA']","['Dolby Laboratories, Inc.']",Jeffrey,Riedmiller
+472,['USA'],"['Dolby Laboratories, Inc.']",Jeffrey,Riedmiller
 473,['None'],['None'],Mark,Rifkin
 474,"['York, UK']",['University of York'],David,Rivas Méndez
 475,"['Erlangen, Germany']",['International Audio Laboratories Erlangen'],Thomas,Robotham
@@ -527,7 +527,7 @@
 525,['None'],['None'],Judy,Sherman
 526,"['New York, NY']",['National Audio Theatre Festivals'],David,Shinn
 527,"['Salford, Greater Manchester, UK', 'Salford, Greater Manchester, UK']","['University of Salford', 'Salsa Sound Ltd']",Ben,Shirley
-528,[''],['Shuster Sound'],Bob,Shuster
+528,['USA'],['Shuster Sound'],Bob,Shuster
 529,"['Stanford, CA, USA', 'Berkeley, CA, USA']","['Stanford University', 'Meyer Sound Laboratories']",Juan,Sierra
 530,"['Los Angeles, CA, USA']","['Vice President of Technology and Strategy, Fox Networks']",Steve,Silva
 531,"['New York, NY, USA']",['New York University'],Noah,Simon
@@ -594,7 +594,7 @@
 592,"['Oldenburg, Germany']",['Fraunhofer Hör-Sprach- und Audio Technologie'],Steven,van de Par
 593,"['Schwerzenbach, Switzerland']",['Archwave Technologies'],Arie,van den Broek
 594,['None'],['None'],CJ,Vanston
-595,[''],"['Senior Sound Designer, Avalanche Studios']",Dominic,Vega
+595,['USA'],"['Senior Sound Designer, Avalanche Studios']",Dominic,Vega
 596,['CNRS'],['IRCAM'],Isabelle,Viaud-Delmon
 597,"['Tampere, Finland']",['Tampere University of Technology'],Tuomas,Virtanen
 598,['None'],[''],Tony,Visconti

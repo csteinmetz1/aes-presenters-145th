@@ -1,0 +1,262 @@
+,0,1
+0,None,125
+1,"New York, NY, USA",32
+2,"Erlangen, Germany",22
+3,"Beijing, China",18
+4,"London, UK",15
+5,"Tokyo, Japan",15
+6,"San Francisco, CA, USA",13
+7,"York, UK",11
+8,USA,11
+9,"Berkeley, CA, USA",9
+10,"Alcalá de Henares, Madrid, Spain",9
+11,"Boston, MA, USA",8
+12,"Rochester, NY, USA",8
+13,"Kgs. Lyngby, Denmark",7
+14,"Nashville, TN, USA",7
+15,"Northridge, CA, USA",7
+16,"Guildford, Surrey, UK",6
+17,"Salford, UK",6
+18,"Hannover, Germany",6
+19,"Montreal, Quebec, Canada",5
+20,"Hamburg, Germany",5
+21,"Aachen, Germany",5
+22,"Paris, France",5
+23,"Milan, Italy",5
+24,"Valencia, CA, USA",5
+25,"Birmingham, UK",5
+26,"Marcoussis, France",5
+27,"Gdansk, Poland",5
+28,"Los Angeles, CA, USA",5
+29,"Munich, Germany",5
+30,"Salford, Greater Manchester, UK",5
+31,"Seattle, WA, USA",5
+32,"San Diego, CA, USA",4
+33,"Troy, NY, USA",4
+34,"Cambridge, MA, USA",4
+35,"Krakow, Poland",4
+36,"Beaverton, OR, USA",4
+37,"Calabasas, CA, USA",4
+38,"Setagaya-ku, Tokyo, Japan",4
+39,"Kraków, Poland",4
+40,"Sydney, NSW, Australia",3
+41,"Athens, Greece",3
+42,"Brooklyn, NY, USA",3
+43,"Tampere, Finland",3
+44,Germany,3
+45,"Rennes, France",3
+46,"Southampton, UK",3
+47,"Derby, Derbyshire, UK",3
+48,"Montreal, QC, Canada",3
+49,Japan,3
+50,"Bloomington, IN, USA",3
+51,"Washington, DC, USA",3
+52,"Huddersfield, UK",3
+53,"Philadelphia, PA, USA",3
+54,"Itzehoe, Germany",3
+55,"St. Petersburg, Russia",3
+56,"Stanford, CA, USA",2
+57,"Little Ferry, NJ, USA",2
+58,"Pittsburgh, PA, USA",2
+59,"Iisalmi, Finland",2
+60,"Ilmenau, Germany",2
+61,"Coral Gables, FL, USA",2
+62,"Vancouver, WA, USA",2
+63,"Berlin, Germany",2
+64,"Cambridge, UK",2
+65,"Parma, Italy",2
+66,"Köthen, Germany",2
+67,"Lowell, MA, USA",2
+68,"Manchester, UK",2
+69,"Liege, Belgium",2
+70,"Morgan Hill, CA, USA",2
+71,"Lannion, France",2
+72,"Basel, Switzerland",2
+73,CNRS-Sorbonne Université,2
+74,"Superior, WI, USA",2
+75,"Bozeman, MT, USA",2
+76,"Seoul, Korea",2
+77,"Washington DC, USA",2
+78,"Stuttgart, Germany",2
+79,"Phoenix, AZ, USA",2
+80,"Towson, MD, USA",2
+81,"Nanjing, China",2
+82,"Chicago, IL, USA",2
+83,Russia,2
+84,Poland,2
+85,"Cleveland, OH, USA",2
+86,"Santa Barbara, CA, USA",2
+87,"Atlanta, GA, USA",2
+88,"Karlsruhe, Germany",2
+89,"Yokohama-shi, Kanagawa, Japan",1
+90,"Nashville, Tennessee, USA",1
+91,"Flushing, NY, USA",1
+92,"Quebec city, Canada",1
+93,"Purchase, NY, USA",1
+94,"Portland, ME USA",1
+95,"Espoo, Finland",1
+96,"Cincinnati, OH, USA",1
+97,"Santiago de Chile, Chile",1
+98,"Mittweida, Germany",1
+99,"Piteå, Sweden",1
+100,"Indianapolis, IN, USA",1
+101,"Copenhagen, Denmark",1
+102,"Somerville, MA, USA",1
+103,"Ventura, CA, USA",1
+104,"Bedford, MA, USA",1
+105,"San Jose, CA, USA",1
+106,"Milano, IT",1
+107,"Burbank, CA, USA",1
+108,"Shinan ICT, Incheon, Korea",1
+109,"Wedemark, Germany",1
+110,"Montreal, Canada",1
+111,"Smørum, Denmark",1
+112,"Allerød, Denmark",1
+113,Digital Media Solutions,1
+114,"Niles, IL USA",1
+115,"Washington, DC",1
+116,Austrian TV,1
+117,European Broadcasting Union,1
+118,"Puidoux, Switzerland",1
+119,"Venice, CA, USA",1
+120,"Cracow, Poland",1
+121,"Kepno, Poland",1
+122,"Suwon, Korea",1
+123,"Old Lyme, CT USA",1
+124,"Belo Horizonte, Brazil",1
+125,"Kansas City, KS, USA",1
+126,"Lexington, MA, USA",1
+127,"Scandicci, Italy",1
+128,"Gothenburg, Sweden",1
+129,"Natick, MA, USA",1
+130,"Aran-Villette, Vaud, Switzerland",1
+131,"Williamsburg, VA, USA",1
+132,Rastatt Germany,1
+133,"La Jolla, CA, USA",1
+134,"Mt. Vernon NY, USA",1
+135,"Uster, Zürich, Switzerland",1
+136,"Lausanne, Switzerland",1
+137,"Uster, Switzerland",1
+138,"Southampton, Hampshire, UK",1
+139,"Huddersfield, West Yorkshire, UK",1
+140,"Porto, Portugal",1
+141,"Brewster, NY, USA",1
+142,"Staines-Upon Thames, Surrey, UK",1
+143,"Greendell, NJ, USA",1
+144,"Mountain View, CA, USA",1
+145,"Brighton, UK",1
+146,"Philadephia, PA, USA",1
+147,"Ann Arbor, MI, USA",1
+148,"Alexandria, VA",1
+149,"Stow, OH, USA",1
+150,"Boulder, CO, USA",1
+151,"Colchester, UK",1
+152,"Chofu-shi, Tokyo, Japan",1
+153,"Pago Pago, American Samoa",1
+154,"Gastonia, NC, USA",1
+155,"Istanbul, Turkey",1
+156,"Kogens Lyngby, Denmark",1
+157,"Dunstable, Bedfordshire, UK",1
+158,"San Rafael, CA, USA",1
+159,"Santa Cruz, CA, USA",1
+160,"Gyeonggi-do, Korea",1
+161,"Kingston, NY, USA",1
+162,"Backnang, Germany",1
+163,"Islamabad, Pakistan",1
+164,"Orlando, FL, USA",1
+165,"Buena Park, CA, USA",1
+166,"Amsterdam, Netherlands",1
+167,"Alkmaar, Netherlands.",1
+168,"Richmond, CA, USA",1
+169,"Dresden, Germany",1
+170,"Shinjuku-ku, Tokyo, Japan",1
+171,"Vilnius, Lithuania",1
+172,"Le Grand-Saconnex, Genéve, Switzerland",1
+173,"Hanover, MA, USA",1
+174,"West Hartford, CT, USA",1
+175,"Andover, MA, USA",1
+176,"Richardson, TX, USA",1
+177,Scandicci,1
+178,"Luleå, Sweden",1
+179,"Medford, MA, USA",1
+180,"Victoria, BC, Canada",1
+181,New York / Havana,1
+182,New York/Havana,1
+183,"Camarillo, CA, USA",1
+184,"Shanghai, China",1
+185,"Santa Clara, CA, USA",1
+186,Alcala de Henares,1
+187,"Portland, ME, USA",1
+188,"Tigard, OR, USA",1
+189,"Vienna, Austria",1
+190,"South Brisbane, Queensland, Australia",1
+191,"Colchester, Essex, UK",1
+192,Parma,1
+193,"Setagaya, Tokyo, Japan",1
+194,"Tokyo-to, Japan",1
+195,"Buenos Aires, Argentina",1
+196,"College Park, MD, USA",1
+197,"Belfast, Northern Ireland, UK",1
+198,"Sunnyvale, CA, USA",1
+199,Appiano Gentile,1
+200,"Hollywood, CA, USA",1
+201,"Severna Park, MD, USA",1
+202,"New York City, NY, USA",1
+203,"Queens, NY, USA",1
+204,"Derby, UK",1
+205,"Old Lyme, CT, USA",1
+206,"Austin, TX, USA",1
+207,"Buenos Aires, Capital Federal, Argentina",1
+208,"Lancaster, PA,  USA",1
+209,"Quebec, Canada",1
+210,"Santa Ana, CA, USA",1
+211,UK,1
+212,"Fukuoka, Japan",1
+213,"Sacramento, CA, USA",1
+214,"Evanston, IL, USA",1
+215,"Union City, NJ  USA",1
+216,"San Francisco Bay Area, CA",1
+217,"Zhengzhou, China",1
+218,"Niles, IL, USA",1
+219,"Lethbridge, Alberta, Canada",1
+220,"Englewood CO, USA",1
+221,"Baton Rouge, LA, USA",1
+222,"Tuebingen, Germany",1
+223,"Schaan, Liechtenstein",1
+224,"Bexley, OH, USA",1
+225,"Auckland, New Zealand",1
+226,"Nanjing, Jiangsu Province, China",1
+227,"New York, NY",1
+228,"Le Mans, France",1
+229,Chicago & NYC,1
+230,"Toms River, NJ,  USA",1
+231,"McMahons Point, NSW, Australia",1
+232,"Princeton, NJ, USA",1
+233,"Athens, OH, USA",1
+234,"Martinsville, NJ",1
+235,"Key West, FL, USA",1
+236,"Highland, NY, USA",1
+237,"Larkspur, CA, USA",1
+238,"Pittsburg, PA, USA",1
+239,Korea,1
+240,"Cambridge, MA",1
+241,"Minato-ku, Tokyo, Japan",1
+242,"Callaghan, NSW, Australia",1
+243,"California, USA",1
+244,"Oak Park, CA, USA",1
+245,"Irvine, CA, USA",1
+246,"Nakano-ku, Tokyo, Japan",1
+247,"Omaha, NE, USA",1
+248,"Oldenburg, Germany",1
+249,"Schwerzenbach, Switzerland",1
+250,CNRS,1
+251,"Memphis, TN, USA",1
+252,"Valley Village, CA, USA",1
+253,"New Milford, CT, USA",1
+254,"Rio Rancho, NM, USA",1
+255,"Merrick, NY, USA",1
+256,WA,1
+257,"Hørsholm, Denmark",1
+258,"Poznan, Poland",1
+259,"Tübingen, Germany",1
+260,"Carle Place, NY, USA",1

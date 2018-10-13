@@ -18,14 +18,17 @@ def clean_presenters_list(presenters):
     
         for l_idx, location in enumerate(presenter['affiliation_locations']):
             country = location.split(',')[-1].strip()
-            if country == "NY USA":
-                presenters[p_idx]['affiliation_locations'][l_idx] = ""
+            if   country == "NY USA":
+                presenters[p_idx]['affiliation_locations'][l_idx] = "USA"
+            elif country == "CA USA":
+                presenters[p_idx]['affiliation_locations'][l_idx] = "USA"
 
     return presenters
 
 # words is a string of words
 def remove_stopwords(words):
-    stop_words = set(stopwords.words('english') + list(string.punctuation)) 
+    my_stop_words = ["’", 'paper', 'using', 'used', 'based', 'different']
+    stop_words = set(stopwords.words('english') + list(string.punctuation) + my_stop_words) 
     word_tokens = word_tokenize(words) 
     
     filtered_words = []
