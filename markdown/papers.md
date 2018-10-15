@@ -1,6 +1,6 @@
 
 ## Papers
-This section outlines statistics related to papers accepted to the confenerce. This includes papers that are presented in the form of talks as well as posters. 
+This section outlines statistics related to papers accepted to the convention. This includes papers that are presented in the form of talks as well as posters. 
 
 Total number of accepted papers: 142<br/>
 Total number of affiliations: 140<br/>

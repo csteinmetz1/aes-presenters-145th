@@ -1,5 +1,7 @@
 
 ## Presenters
+This section outlines statistics about all of the presenters at the convention. It it not limited to just accepted papers.
+
 Total number of presenters: 651<br/>
 Total number of affiliations:  423<br/>
 Total number of cities: 260<br/>

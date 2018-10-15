@@ -4,7 +4,7 @@ def format_paper_data(stats):
 
 	papers_text = """
 	## Papers
-	This section outlines statistics related to papers accepted to the confenerce. This includes papers that are presented in the form of talks as well as posters. 
+	This section outlines statistics related to papers accepted to the convention. This includes papers that are presented in the form of talks as well as posters. 
 
 	Total number of accepted papers: {0:0d}<br/>
 	Total number of affiliations: {1:0d}<br/>
@@ -34,6 +34,8 @@ def format_paper_data(stats):
 def format_presenter_data(stats):
 	presenters_text = """
 	## Presenters
+	This section outlines statistics about all of the presenters at the convention. It it not limited to just accepted papers.
+
 	Total number of presenters: {0:0d}<br/>
 	Total number of affiliations:  {1:0d}<br/>
 	Total number of cities: {2:0d}<br/>
