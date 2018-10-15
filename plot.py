@@ -16,10 +16,10 @@ def plot_presenter_data(statistics, top_limit=10):
     plt.barh(x_pos, cnt[::-1], align='center')
     plt.yticks(x_pos, names[::-1]) 
     plt.xlabel('Count')
-    ax.set_xlim(0, 12)
+    ax.set_xlim(0, 14)
 
     for i, v in enumerate(cnt[::-1]):
-        ax.text(v + 0.125, i, "{:0.01f}%".format((v*100)/statistics['presenters']), va='center')
+        ax.text(v + 0.125, i, "{0:0d} ({1:0.01f}%)".format(v, (v*100)/statistics['presenters']), va='center')
 
     fig.subplots_adjust(left=0.3)
     plt.savefig("img/presenter_names.png")
@@ -33,10 +33,10 @@ def plot_presenter_data(statistics, top_limit=10):
     plt.barh(x_pos, cnt[::-1], align='center')
     plt.yticks(x_pos, locations[::-1]) 
     plt.xlabel('Count')
-    ax.set_xlim(0, 36)
+    ax.set_xlim(0, 39)
 
     for i, v in enumerate(cnt[::-1]):
-        ax.text(v + 0.25, i, "{:0.01f}%".format((v*100)/statistics['presenters']), va='center')
+        ax.text(v + 0.25, i, "{0:0d} ({1:0.01f}%)".format(v, (v*100)/statistics['presenters']), va='center')
 
     fig.subplots_adjust(left=0.3)
     plt.savefig("img/presenter_locations.png")
@@ -50,10 +50,10 @@ def plot_presenter_data(statistics, top_limit=10):
     plt.barh(x_pos, cnt[::-1], align='center')
     plt.yticks(x_pos, countries[::-1]) 
     plt.xlabel('Count')
-    ax.set_xlim(0, 275)
+    ax.set_xlim(0, 285)
 
     for i, v in enumerate(cnt[::-1]):
-        ax.text(v + 1, i, "{:0.01f}%".format((v*100)/statistics['presenters']), va='center')
+        ax.text(v + 1, i, "{0:0d} ({1:0.01f}%)".format(v, (v*100)/statistics['presenters']), va='center')
 
     fig.subplots_adjust(left=0.1)
     plt.savefig("img/presenter_countries.png")
@@ -74,8 +74,7 @@ def plot_paper_data(statistics, top_limit=10):
     ax.set_xlim(0, cnt[0]+1)
 
     for i, v in enumerate(cnt[::-1]):
-        ax.text(v + 0.125, i, "{0:0.01f}%".format((v*100)/statistics['papers']), va='center')
-        #ax.text(v - 0.25, i, "{0:0d}".format(v), color='white', va='center')
+        ax.text(v + 0.125, i, "{0:0d} ({1:0.01f}%)".format(v, (v*100)/statistics['papers']), va='center')
 
     fig.subplots_adjust(left=0.2)
     plt.savefig("img/paper_authors.png")
@@ -92,8 +91,7 @@ def plot_paper_data(statistics, top_limit=10):
     ax.set_xlim(0, cnt[0]+6)
 
     for i, v in enumerate(cnt[::-1]):
-        ax.text(v + 0.5, i, "{0:0.01f}%".format((v*100)/statistics['papers']), va='center')
-        #ax.text(v - 1.25, i, "{0:0d}".format(v), color='white', va='center')
+        ax.text(v + 0.5, i, "{0:0d} ({1:0.01f}%)".format(v, (v*100)/statistics['papers']), va='center')
 
     fig.subplots_adjust(left=0.3)
     plt.savefig("img/paper_subjects.png")
@@ -110,8 +108,7 @@ def plot_paper_data(statistics, top_limit=10):
     ax.set_xlim(0, cnt[0]+20)
 
     for i, v in enumerate(cnt[::-1]):
-        ax.text(v + 2.0, i, "{0:0.02f}%".format((v*100)/len(statistics['words'])), va='center')
-        #ax.text(v - 4.5, i, "{0:0d}".format(v), color='white', va='center')
+        ax.text(v + 2.0, i,  "{0:0d} ({1:0.01f}%)".format(v, (v*100)/len(statistics['words'])), va='center')
 
     plt.savefig("img/abstract_words.png")
 
@@ -124,11 +121,10 @@ def plot_paper_data(statistics, top_limit=10):
     plt.barh(x_pos, cnt[::-1], align='center')
     plt.yticks(x_pos, affs[::-1]) 
     plt.xlabel('Count')
-    ax.set_xlim(0, cnt[0]+1)
+    ax.set_xlim(0, cnt[0]+2)
 
     for i, v in enumerate(cnt[::-1]):
-        ax.text(v + 0.125, i, "{0:0.01f}%".format((v*100)/statistics['papers']), va='center')
-        #ax.text(v - 0.25, i, "{0:0d}".format(v), color='white', va='center')
+        ax.text(v + 0.125, i, "{0:0d} ({1:0.01f}%)".format(v, (v*100)/statistics['papers']), va='center')
 
     fig.subplots_adjust(left=0.4)
     plt.savefig("img/paper_affiliations.png")
